@@ -3,7 +3,11 @@
 html, body{
     height: 100%;
     margin: 0;
+    padding-top: 30px ;
 }
+.section{
+    padding-bottom: 75px;}
+  
 h1 {
     font-family: Montserrat;
     font-size: 48px;
@@ -20,9 +24,9 @@ h1 {
     align-items: center;
     justify-content: center;
     background-image: url(/img/Museum-BG.jpg);
-    background-size:100%;
+    background-size:contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position:bottom;
     }
 .flex-item-top{
         flex: 100%;
@@ -31,6 +35,7 @@ h1 {
       }
 
 .flex-container {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -47,6 +52,112 @@ h1 {
     margin-left: auto;
     margin-right: auto;
   }
+.button {
+width: 170px;
+height: 64px;
+top: 29px;
+border-radius: 10px;
+background-color: white;
+border: 2px solid #000000;
+transition-duration: 0.4s;
+}
+.button-two{
+height: 66px;
+width: 275px;
+background-color: white;
+border-radius: 10px;
+border: 2px solid #000000;
+transition-duration: 0.4s;
+}
+
+.button:hover, .button-two:hover {
+  background-color: black;
+  color: white;
+  border: white
+}
+.section-flex{
+  display:flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.rectangle-one  {
+  margin-left: auto;
+  height: 125px;
+  line-height: 125px;
+  width: 80%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #EC6F72;
+  box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
+  animation-duration: 1s;
+  animation-name: slidein-one;
+  animation-iteration-count: 1;
+  animation-direction:normal;
+}
+
+@keyframes slidein-one {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+
+  to {
+    margin-left:20%;
+  }
+}
+.rectangle-two  {
+  margin-top: 0px;
+  margin-left: auto;
+  height: 125px;
+  line-height: 125px;
+  width: 55%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #FFB94D;
+  box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
+  animation-duration: 1s;
+  animation-name: slidein-two;
+  animation-iteration-count: 1;
+  animation-direction:normal;
+}
+@keyframes slidein-two {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+
+  to {
+    margin-left:45%;
+  }
+}
+.rectangle-three  {
+  margin-top: 0px;
+  margin-left: auto;
+  height: 125px;
+  line-height: 125px;
+  width: 40%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #3C51AA;
+  box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
+  animation-duration: 1s;
+  animation-name: slidein-three;
+  animation-iteration-count: 1;
+  animation-direction:normal;
+}
+@keyframes slidein-three {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+
+  to {
+    margin-left:60%;
+  }
+}
 .imgpreview {
 
     width: 300px;
@@ -57,13 +168,13 @@ body {
   }
 .flex-container-nav  {
     position: fixed;
-    padding: 20px;
+    height: 123px;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: #F8F8F8;
     filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.25));
   }
   
@@ -76,7 +187,6 @@ body {
   
       .logo, .navigation {
           list-style: none;
-          text-transform: uppercase;
           padding-right: 40px;
       }
   
@@ -139,4 +249,48 @@ body {
       border-bottom: none;
     }
   }
+/* animate*/
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
