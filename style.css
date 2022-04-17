@@ -90,12 +90,13 @@ transition-duration: 0.4s;
   text-align: center;
   background: #EC6F72;
   box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
+}
+.rectangle-animation-one {
   animation-duration: 1s;
   animation-name: slidein-one;
   animation-iteration-count: 1;
   animation-direction:normal;
 }
-
 @keyframes slidein-one {
   from {
     margin-left:100%;
@@ -117,21 +118,24 @@ transition-duration: 0.4s;
   text-align: center;
   background: #FFB94D;
   box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
-  animation-duration: 1s;
-  animation-name: slidein-two;
-  animation-iteration-count: 1;
-  animation-direction:normal;
 }
-@keyframes slidein-two {
-  from {
-    margin-left:100%;
-    width:300%
+.rectangle-animation-two {
+    animation-duration: 1s;
+    animation-name: slidein-two;
+    animation-iteration-count: 1;
+    animation-direction:normal;
   }
-
-  to {
-    margin-left:45%;
+  @keyframes slidein-two {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+      margin-left:45%;
+    }
   }
-}
+  
 .rectangle-three  {
   margin-top: 0px;
   margin-left: auto;
@@ -143,21 +147,24 @@ transition-duration: 0.4s;
   text-align: center;
   background: #3C51AA;
   box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
-  animation-duration: 1s;
-  animation-name: slidein-three;
-  animation-iteration-count: 1;
-  animation-direction:normal;
 }
-@keyframes slidein-three {
-  from {
-    margin-left:100%;
-    width:300%
+.rectangle-animation-three {
+    animation-duration: 1s;
+    animation-name: slidein-three;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+  }
+  @keyframes slidein-three {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+      margin-left:60%;
+    }
   }
 
-  to {
-    margin-left:60%;
-  }
-}
 .imgpreview {
 
     width: 300px;
