@@ -1,46 +1,17 @@
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    const square = entry.target.querySelector('.rectangle-one');
+    const square = entry.target.querySelector('.rectangle-' + entry.target.dataset.name);
 
     if (entry.isIntersecting) {
-      square.classList.add('rectangle-animation-one');
+      square.classList.add('rectangle-animation-' + entry.target.dataset.name);
 	  return; // if we added the class, exit the function
     }
 
     // We're not intersecting, so remove the class!
-    square.classList.remove('rectangle-animation-one');
+    square.classList.remove('rectangle-animation-' + entry.target.dataset.name);
   });
 });
 
-observer.observe(document.querySelector('.sectionflex'));
-
-const observer2 = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const square = entry.target.querySelector('.rectangle-two');
-
-    if (entry.isIntersecting) {
-      square.classList.add('rectangle-animation-two');
-	  return; // if we added the class, exit the function
-    }
-
-    // We're not intersecting, so remove the class!
-    square.classList.remove('rectangle-animation-two');
-  });
-});
-observer2.observe(document.querySelector('.sectionlistener-two'));
-
-
-const observer3 = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const square = entry.target.querySelector('.rectangle-three');
-
-    if (entry.isIntersecting) {
-      square.classList.add('rectangle-animation-three');
-	  return; // if we added the class, exit the function
-    }
-
-    // We're not intersecting, so remove the class!
-    square.classList.remove('rectangle-animation-three');
-  });
-});
-observer3.observe(document.querySelector('.sectionlistener-three'));
+observer.observe(document.querySelector('.sectionlistener-one'));
+observer.observe(document.querySelector('.sectionlistener-two'));
+observer.observe(document.querySelector('.sectionlistener-three'));
