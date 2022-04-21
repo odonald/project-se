@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cmmnt.art - comment on art</title>
+    
+</head>
+
 <body>
 
-<h1>cmmntart.</h1>
-<p>Welcome to cmmntart. <br> The first interactive art discussion platfform.</p>
 
-<h2>Check out our latest submisson:</h2>
-<img src="http://cargocult.de/wp-content/uploads/2021/02/halospell_01.jpg" style="width:500px;height:auto; alt="Picture of red graffiti spelling the word Russe with a lady standing in an open window above letting a red scarf hang out the window.">
-<p><i>halospell`too ambitious`, exhibition view, "blinde winkel", L40, Berlin, curated by Julia Wirxel and Su Ran Sichling, 2020</i></p>
-<p>Click <a href="page.html" alt="link to individual discussion page">HERE</a> to join the discussion.</p>
+
+<div class="flex-container-home-top">
+    <div>
+        <h1>The first open comment section for artwork and exhibitions.</h1>
+    </div>
+    <div class="flex-item-top">
+        <a href="/comment-page.html">
+        <img src="img/QR-Mock.png" alt="QR-Code with link to demo page" class="center qr-code">
+        </a>
+    </div>
+</div>
+<div class="section">
+<h1>Join the discussion</h1>
+
+
+<div class="flex-container">
+        <div class="flex-item">
+            <img src="img/museum-big.png" class="imgpreview">
+            <h2>Exhibitions</h2>
+            <li>Create and monitor discussions.</li>
+            <li>Engage with visitors.</li>
+            <li>Receive valuable feedback.</li>
+            <li>Tap into artwork performance.</li>
+        </div>
+        <div class="flex-item">
+            <img src="img/conversation.png" class="imgpreview">
+            <h2>Visitors</h2>
+            <li>Start or join a discussion.</li>
+            <li>Share your impressions, emotions and thoughts.</li>
+            <li>Find more information.</li>
+        </div>
+        <div class="flex-item">
+            <img src="img/artist.jpg" class="imgpreview">
+            <h2>Artists</h2>
+            <li>Create new meetingpoints.</li>
+            <li>Receive unfiltered feedback.</li>
+            <li>Engage with visitors.</li>
+            <li>Expand your audience outreach.</li>
+        </div>
+</div>
+</div>
+    <button type="button" class="center button-two" onclick="window.location.href='/login.html'" >Sign up</button>
+
+        <h1>How it works</h1>
+    <div class="sectionflex">
+        <div class="sectionlistener-one" data-name="one">
+        <div class="rectangle-one">
+        <p>Upload artwork and generate unique QR-Code</p>
+        </div>
+        </div>
+        <div class="sectionlistener-two" data-name="two">
+        <div class="rectangle-two ">
+        <p>Attach code next to artwork</p>
+        </div>
+        </div>
+        <div class="sectionlistener-three" data-name="three">
+        <div class="rectangle-three">
+        <p>Scan code to join the discussion</p>
+        </div>
+        </div>
+    </div>
+    
+   <button type="button" class="center button-two" onclick="window.location.href='#flex-container-home-top'" >Try now</button>
+
+<script src="app.js"></script>
+<script id="replace_with_navbar" src="navbar.js"></script>
+<div>
+<script id="replace_with_footer" src="footer.js"></script>
+</div>
 </body>
 </html>
+
