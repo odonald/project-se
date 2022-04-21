@@ -15,9 +15,20 @@ h1 {
     line-height: 59px;
     letter-spacing: 0em;
     text-align: center;
-
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+p {
+    font-family: Montserrat;
+  }
+li {
+    font-family: Montserrat;
+  }
+h2 {
+    font-family: Montserrat;
   }
 .flex-container-home-top{
+    padding-top: 75px;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -27,10 +38,18 @@ h1 {
     background-size:contain;
     background-repeat: no-repeat;
     background-position:bottom;
-    }
+}
+.flex-comment-page-top{
+  height:50%;
+  background-image: none;
+}
+.flex-item-top-artshow{
+
+}
 .flex-item-top{
+        padding: 0px;
         flex: 100%;
-        vertical-align: middle;
+        justify-content: center;
         align-items: center;
       }
 
@@ -38,11 +57,34 @@ h1 {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    width:100%;
     align-items: center;
     justify-content: center;
     background: rgba(227, 222, 216, 0.15);
     box-shadow: 0px 7px 24px 3px rgba(0, 0, 0, 0.25);
     }
+.flex-container-footer  {
+      flex: 1;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      bottom: 0;
+      width: 100%;
+      background-color: #E3DED8;
+      margin-top: 75px;
+    }
+.flex-container-footer .flex-item  {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    }
+.footer-row {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+
 .flex-item {
     flex: 0 0 92px;    
     padding:30px 50px 30px 30px;
@@ -53,17 +95,20 @@ h1 {
     margin-right: auto;
   }
 .button {
+font-family: Montserrat;
+font-size: 14px;
 width: 170px;
 height: 64px;
-top: 29px;
 border-radius: 10px;
 background-color: white;
 border: 2px solid #000000;
 transition-duration: 0.4s;
 }
 .button-two{
-height: 66px;
+font-family: Montserrat;
+font-size: 14px;
 width: 275px;
+height: 66px;
 background-color: white;
 border-radius: 10px;
 border: 2px solid #000000;
@@ -75,10 +120,32 @@ transition-duration: 0.4s;
   color: white;
   border: white
 }
-.section-flex{
+.qr-code{
+  border:5px solid black;
+  width: 300px;
+  height: 300px;
+  left: 569px;
+  top: 445px;
+
+  box-shadow: 2px 5px 7px 2px rgba(0, 0, 0, 0.4);
+}
+.sectionflex{
+  width: 100%;
   display:flex;
   flex-direction: column;
-  padding: 30px;
+  margin-bottom: 60px;
+}
+.sectionflex p{
+  font-size: 24px;
+}
+.copywright {
+  padding-top: 0px;
+  padding-bottom:0px;
+  margin-bottom: 0px;
+}
+.copywright p {
+  font-size: 16px;
+  color:black;
 }
 .rectangle-one  {
   margin-left: auto;
