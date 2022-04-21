@@ -19,7 +19,7 @@ How to start:
 - source venv/bin/activate
 
 Install all required packages: 
--python -m pip install -r requirements.txt
+- python -m pip install -r requirements.txt
 
 
 ## Technologies Used
