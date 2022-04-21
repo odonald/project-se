@@ -19,6 +19,7 @@ The aim of this project is to build a plattform for people to discuss their thou
 ## Technologies Used
 - HTML
 - CSS
+- JS
 - More technoligies will be added as this project is WIP 
 
 
