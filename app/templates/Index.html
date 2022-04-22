@@ -1,25 +1,25 @@
+{% extends "template.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cmmnt.art - comment on art</title>
     
 </head>
 
 <body>
+{% block navigation %}{% endblock %}
 
-
-
+{% block content %}
 <div class="flex-container-home-top">
     <div>
         <h1>The first open comment section for artwork and exhibitions.</h1>
     </div>
     <div class="flex-item-top">
-        <a href="/comment-page.html">
-        <img src="img/QR-Mock.png" alt="QR-Code with link to demo page" class="center qr-code">
+        <a href="/comments">
+        <img src="{{ url_for('static', filename='img/QR-Mock.png') }}" alt="QR-Code with link to demo page" class="center qr-code">
         </a>
     </div>
 </div>
@@ -29,7 +29,7 @@
 
 <div class="flex-container">
         <div class="flex-item">
-            <img src="img/museum-big.png" class="imgpreview">
+            <img src="static/img/museum-big.png" class="imgpreview">
             <h2>Exhibitions</h2>
             <li>Create and monitor discussions.</li>
             <li>Engage with visitors.</li>
@@ -37,14 +37,14 @@
             <li>Tap into artwork performance.</li>
         </div>
         <div class="flex-item">
-            <img src="img/conversation.png" class="imgpreview">
+            <img src="static/img/conversation.png" class="imgpreview">
             <h2>Visitors</h2>
             <li>Start or join a discussion.</li>
             <li>Share your impressions, emotions and thoughts.</li>
             <li>Find more information.</li>
         </div>
         <div class="flex-item">
-            <img src="img/artist.jpg" class="imgpreview">
+            <img src="static/img/artist.jpg" class="imgpreview">
             <h2>Artists</h2>
             <li>Create new meetingpoints.</li>
             <li>Receive unfiltered feedback.</li>
@@ -53,7 +53,7 @@
         </div>
 </div>
 </div>
-    <button type="button" class="center button-two" onclick="window.location.href='/login.html'" >Sign up</button>
+    <button type="button" class="center button-two" onclick="window.location.href='/login'" >Sign up</button>
 
         <h1>How it works</h1>
     <div class="sectionflex">
@@ -75,11 +75,10 @@
     </div>
     
    <button type="button" class="center button-two" onclick="window.location.href='#flex-container-home-top'" >Try now</button>
-
-<script src="app.js"></script>
-<script id="replace_with_navbar" src="navbar.js"></script>
+   <script src="{{url_for('static', filename='js/app.js')}}"></script>
+   {% endblock %}
 <div>
-<script id="replace_with_footer" src="footer.js"></script>
+{% block footer %}{% endblock %}
 </div>
 </body>
 </html>

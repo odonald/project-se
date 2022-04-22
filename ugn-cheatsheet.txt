@@ -1,0 +1,70 @@
+====================
+UGN's cheat sheet
+====================
+
+Create a virtual environment 
+python3 -m venv venv
+
+Activate the virtual environment 🔗
+source venv/bin/activate
+
+Deactivating the virtual environment
+"deactivate"
+
+Install all packages:
+python -m pip install -r requirements.txt
+
+Add new packages to requirements:
+pip freeze > requirements.txt
+
+
+simple def of a decorator:
+Without arguments:
+
+def function_decorator(func):
+    def wrapped_func():
+        print('=' * 30)
+        func()
+        print('=' * 30)
+    return wrapped_func
+
+@function_decorator
+def test():
+    print('Hello World!')
+
+prints:
+        ====================
+        Hello World
+        ====================
+
+With arguments:
+def function_decorator(func):
+    def wrapped_func(*args, **kwargs):
+        print('=' * 30)
+        func(*args, **kwargs)
+        print('=' * 30)
+    return wrapped_func
+
+@function_decorator
+def greeting(name):
+    print(f'Hey {name}! Whats up?')
+
+>>greeting(chris) 
+prints:
+        ====================
+        Hey Chris! Whats up?
+        ====================
+
+**ARGS AND **KWARGS ?
+
+Exeption handling:
+Try:
+    run code to execute
+except:
+    print("code returned errory X-Y. eg. ZeroDivisionError")
+except ZeroDivisionError:
+    print("This will only turn up for ZeroDivisionError")
+finally:
+    print("Always printed")
+
+print("Program end - this will print at the end of booth situations")
