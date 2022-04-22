@@ -33,7 +33,7 @@ h2 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-image: url(static/img/Museum-BG.jpg);
+    background-image: url(/static/img/Museum-BG.jpg);
     background-size:contain;
     background-repeat: no-repeat;
     background-position:bottom;
