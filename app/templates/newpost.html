@@ -9,6 +9,7 @@
             <p>{{ post['created'] }}</p>
             <h2>{{ post['title'] }}</h2>
             <p>{{ post['content'] }}</p>
+            <button type="button" class="center button-two" onclick="window.location.href='{{ url_for('edit', id=post['id']) }}'" >Edit</button>
         </div>
     {% endfor %}
 {% endblock %}

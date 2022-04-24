@@ -28,6 +28,7 @@ Install all required packages:
 - JS
 - Python3
 - Flask 
+- SQLite
 
 
 ## Features
