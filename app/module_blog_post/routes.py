@@ -7,7 +7,7 @@ blueprint = Blueprint('module_blog_post', __name__)
 ## Connecting to database ##
 
 def get_db_connection():
-    conn = sqlite3.connect('app/module_blog_post/database.db')
+    conn = sqlite3.connect('app/database.db')
     conn.row_factory = sqlite3.Row
     return conn
 
