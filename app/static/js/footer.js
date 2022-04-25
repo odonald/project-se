@@ -1,4 +1,4 @@
-fetch('footer.html')
+fetch('/footer')
 .then(res => res.text())
 .then(text => {
     let oldelem = document.querySelector("script#replace_with_footer");

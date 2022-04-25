@@ -11,16 +11,24 @@ The best conversations are going down in the youtube comment section. Lets take 
 * [Contact](#contact)
 
 
-
 ## General Information
 The aim of this project is to build a plattform for people to discuss their thoughts on individual pieces of art. To join a discussion users will most likely scan a QR code next to the artwork. This will take them to the discussion page. Here they can engage with others who have seen this particulay work of art and find more information about the artists and project background. 
+
+## Virtual Environment
+How to start:
+- source venv/bin/activate
+
+Install all required packages: 
+- python -m pip install -r requirements.txt
 
 
 ## Technologies Used
 - HTML
 - CSS
 - JS
-- More technoligies will be added as this project is WIP 
+- Python3
+- Flask 
+- SQLite
 
 
 ## Features

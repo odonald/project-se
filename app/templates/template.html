@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cmmnt.art - comment on art</title>
+</head>
+<body>
+{% block navigation %}
+<div class="flex-container-nav">
+    <h1 class="logo"><a href="/Index.html"><u>Cmmnt</u>.art</a></h1>
+    <ul class="navigation">
+        <li><button type="button" class="button" onclick="window.location.href='/login.html'" >Sign up</button></li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+      <div class="content">
+    {% for message in get_flashed_messages() %}
+         <div class="alert">{{ message }}</div>
+    {% endfor %}
+    <script id="replace_with_navbar" src="{{url_for('static', filename='js/navbar.js')}}"></script>
+    <div>
+    <script id="replace_with_footer" src="{{url_for('static', filename='js/footer.js')}}"></script>
+    </div>
+</body>
+</html>
+    
