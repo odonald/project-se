@@ -4,23 +4,18 @@ from . import module_blog_post
 
 
 
-from flask import Flask
-from . import cookies, simple_pages
+app = Flask(__name__)
 
-def create_app():
-  app = Flask(__name__)
-  app.config.from_object('app.config')
-
-  register_blueprints(app)
-
-  return app
-
-# Blueprints
-def register_blueprints(app: Flask):
-    app.register_blueprint(module_blog_post.routes.blueprint)
+app.config.from_object('app.config')
 
 ## I'm not sure if the key should be in this file, but I tried moving it to the "module_blog_post" wich broke the code ## 
+
 app.config['SECRET_KEY'] = '74081e0e33c1046bd8f96bb3528e857c21b1064ad6f47f8f'
+
+
+app.register_blueprint(module_blog_post.routes.blueprint)
+
+
 
 @app.route("/")
 def home():
