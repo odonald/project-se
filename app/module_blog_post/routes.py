@@ -27,7 +27,7 @@ def newpost():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
-    return render_template("newpost.html", posts=posts)
+    return render_template("/module_blog_post/index.html", posts=posts)
 
 @blueprint.route('/create', methods=('GET', 'POST'))
 def create():
@@ -47,7 +47,7 @@ def create():
             conn.close()
             return redirect(url_for('module_blog_post.newpost'))
 
-    return render_template('create.html')
+    return render_template('module_blog_post/create.html')
 
 
 ## Write a post app ends here ##
@@ -76,10 +76,10 @@ def edit(id):
             conn.close()
             return redirect(url_for('module_blog_post.newpost'))
 
-    return render_template('edit.html', post=post)
+    return render_template('module_blog_post/edit.html', post=post)
 ## Edit a post app ends here ##
 
-## Deliting posts starts here ##
+## Deleteing posts starts here ##
 @blueprint.route('/<int:id>/delete/', methods=('POST',))
 def delete(id):
     post = get_post(id)
@@ -89,4 +89,4 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('module_blog_post.newpost'))
-## Deliting posts ends here ##
+## Deleteing posts ends here ##
