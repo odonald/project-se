@@ -78,3 +78,16 @@ via python shell ("python"):
 
 import os
 os.urandom(24).hex()
+
+
+After defining MODELS CREATE A MIGRATION from command line:
+
+flask db migrate -m 'create user model'
+flask db upgrade
+
+
+
+For logout button:
+
+      Logged in as {{ current_user.email }}.
+      <a href="{{ url_for('users.logout') }}">Logout</a>

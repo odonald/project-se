@@ -1,5 +1,6 @@
 import sqlite3
 from flask import Blueprint, redirect, url_for,render_template, flash, redirect, request, abort
+from flask_login import login_required
 
 blueprint = Blueprint('module_blog_post', __name__)
 
@@ -23,6 +24,7 @@ def get_post(post_id):
 
 ## Write a post app starts here ##
 @blueprint.route("/newpost")
+@login_required
 def newpost():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()

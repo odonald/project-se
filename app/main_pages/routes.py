@@ -27,10 +27,6 @@ def impressum():
 def legal():
     return render_template("main_pages/legal.html")
 
-@blueprint.route("/login")
-def login():
-    return render_template("main_pages/login.html")
-
 @blueprint.route("/navbar")
 def navbar():
     return render_template("main_pages/navbar.html")

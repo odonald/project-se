@@ -1,0 +1,25 @@
+{% extends "main_pages/template.html" %}
+
+{% block navigation %}{% endblock %}
+{% if error %}
+  <p style="color: tomato;">{{ error }}</p>
+{% endif %}
+{% block content %}
+<h1>Login</h1>
+
+  <form method="POST">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    
+    <input type="submit" value="Login">
+  </form>  
+{% endblock %}
+
+{% block footer %}{% endblock %}

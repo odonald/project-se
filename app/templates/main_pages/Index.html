@@ -18,7 +18,7 @@
         <h1>The first open comment section for artwork and exhibitions.</h1>
     </div>
     <div class="flex-item-top">
-        <a href="{{ url_for('module_blog_post.newpost') }}">
+        <a href="{{ url_for('users.post_register') }}">
         <img src="{{ url_for('static', filename='img/QR-Mock.png') }}" alt="QR-Code with link to demo page" class="center qr-code">
         </a>
     </div>
@@ -53,7 +53,7 @@
         </div>
 </div>
 </div>
-    <button type="button" class="center button-two" onclick="{{ url_for('main_pages.login') }}" >Sign up</button>
+    <button type="button" class="center button-two" onclick="{{ url_for('users.get_login') }}" >Sign up</button>
 
         <h1>How it works</h1>
     <div class="sectionflex">
