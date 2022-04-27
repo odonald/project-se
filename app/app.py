@@ -6,6 +6,9 @@ from app.extensions.authentication import login_manager
 def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config')
+    login_manager.login_view = "users.get_login"
+
+    
     
     register_extensions(app)
     register_blueprints(app)

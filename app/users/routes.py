@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, request, url_for, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.users.models import User
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_manager
 
+login_manager.login_view = "users.login"
 
 blueprint = Blueprint('users', __name__)
 

@@ -32,6 +32,7 @@ def newpost():
     return render_template("/module_blog_post/index.html", posts=posts)
 
 @blueprint.route('/create', methods=('GET', 'POST'))
+@login_required
 def create():
     if request.method == 'POST':
         title = request.form['title']
