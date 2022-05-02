@@ -3,8 +3,7 @@
 {% block navigation %}{% endblock %}
 
 {% block content %}
-<div class="container-flex">
-<h1>{% block title %} Posts {% endblock %}</h1>
+<div class="flex-container-post">
     {% for post in posts %}
         <div class='post'>
             <!-- Don't want to show date and time for now. Maybe later-->
@@ -13,7 +12,8 @@
             <p>{{ post['content'] }}</p>
             <button type="button" class="button-two" onclick="window.location.href='{{ url_for('module_blog_post.get_edit', id=post['id']) }}'" >Edit</button>
         </div>
-    {% endfor %}
+        {% endfor %}
+
 </div>
 {% endblock %}
 

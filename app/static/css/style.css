@@ -8,7 +8,7 @@ html, body{
 }
 .section{
     padding-bottom: 75px;}
-  
+
 h1 {
     font-size: 48px;
     font-weight: 400;
@@ -97,7 +97,12 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
 .submitform{
   padding-left: 40px;
 }
-
+.flex-container-post{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  align-items: center;
+}
 .flex-container {
     flex: 1;
     display: flex;
