@@ -28,14 +28,17 @@ The aim of this project is to build a plattform for people to discuss their thou
 1. Clone repository to your local machine. 
 - git clone git@github.com:odonald/project-se.git
 
-2. Navigate to project root folder and start your virtual enironment:
-- Command: source venv/bin/activate
+2. Assuming you have Python3 installed alread, navigate to project root folder and create a virtual environment:
+- python3 -m venv venv 
 
-3. Install all required packages: 
-- Command: python -m pip install -r requirements.txt
+3. From project root folder start your virtual environment:
+- source venv/bin/activate
 
-4. Start server (navigate to location of run.py ):
-- Command: python run.py
+4. Install all required packages: 
+- python -m pip install -r requirements.txt
+
+5. Start server from project root folder:
+- python run.py
     Copy the local URL from your terminal and open it in a webbrowser of choice (Firefox/Chrome recommended)
 
 
