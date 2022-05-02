@@ -3,9 +3,9 @@ from flask import Blueprint, render_template, redirect, url_for, send_file
 blueprint = Blueprint('main_pages', __name__)
 
 
-@blueprint.route("/home")
+@blueprint.route("/")
 def home():
-    return render_template("main_pages/home.html")
+    return render_template("main_pages/index.html")
 
 @blueprint.route("/comments")
 def comments():
