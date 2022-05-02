@@ -26,13 +26,15 @@ The aim of this project is to build a plattform for people to discuss their thou
 ## Setup:
 
 1. Clone repository to your local machine. 
-Navigate to project root folder and start your virtual enironment:
-- Command. source venv/bin/activate
+- git clone git@github.com:odonald/project-se.git
 
-2. Install all required packages: 
+2. Navigate to project root folder and start your virtual enironment:
+- Command: source venv/bin/activate
+
+3. Install all required packages: 
 - Command: python -m pip install -r requirements.txt
 
-3. Start server (location of run.py ):
+4. Start server (navigate to location of run.py ):
 - Command: python run.py
     Copy the local URL from your terminal and open it in a webbrowser of choice (Firefox/Chrome recommended)
 
@@ -55,7 +57,6 @@ Navigate to project root folder and start your virtual enironment:
 ## Project Status
 Setup phase.
 This project is still at its very beginning. 
-
 
 ## Contact
 Created by Eugene O'Donald - 2022

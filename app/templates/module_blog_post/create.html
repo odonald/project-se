@@ -3,25 +3,24 @@
 {% block navigation %}{% endblock %}
 
 {% block content %}
-<h1>{% block title %} Add a New Post {% endblock %}</h1>
-<form method="post">
+<div class="flex-container-forms">
+<h1>Add a New Post</h1>
+<form method="POST">
+    <div>
     <label for="title">Title</label>
     <br>
-    <input type="text" name="title"
-           placeholder="Post title"
-           value="{{ request.form['title'] }}"></input>
+    <input type="text" name="title" placeholder="Post title">
     <br>
-
+    </div>
     <label for="content">Post Content</label>
     <br>
-    <textarea name="content"
-              placeholder="Post content"
-              rows="15"
-              cols="60"
-              >{{ request.form['content'] }}</textarea>
+    <div>
+    <textarea name="content" type="text" placeholder="Post content" rows="15" cols="60"></textarea>
     <br>
-    <button type="submit">Submit</button>
+    </div>
+    <button type="submit" class="center button-two">Submit</button>
 </form>
+</div>
 {% endblock %}
 
 {% block footer %}{% endblock %}
