@@ -3,7 +3,8 @@
 {% block navigation %}{% endblock %}
 
 {% block content %}
-<h1>{% block title %} Add a New Post {% endblock %}</h1>
+<div class="flex-container-forms">
+<h1>Add a New Post</h1>
 <form method="POST">
     <div>
     <label for="title">Title</label>
@@ -19,6 +20,7 @@
     </div>
     <button type="submit">Submit</button>
 </form>
+</div>
 {% endblock %}
 
 {% block footer %}{% endblock %}

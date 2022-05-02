@@ -8,11 +8,13 @@ blueprint = Blueprint('module_blog_post', __name__)
 
 
 @blueprint.route("/newpost")
+@login_required
 def newpost():
     posts = Postobject.query.all()
     return render_template("/module_blog_post/index.html", posts=posts)
 
 @blueprint.get('/create')
+@login_required
 def get_create():
     return render_template('module_blog_post/create.html')
 
@@ -45,11 +47,13 @@ def post_create():
 
 ##Edit a post app starts here ##
 @blueprint.get('/<int:id>/edit/')
+@login_required
 def get_edit(id):
     posts = Postobject.query.get(id)
     return render_template('module_blog_post/edit.html', post=posts)
 
 @blueprint.post('/<int:id>/edit/')
+@login_required
 def post_edit(id):
     try:
         posts = Postobject.query.get(id)
@@ -66,6 +70,7 @@ def post_edit(id):
 
 ## Deleteing posts starts here ##
 @blueprint.post('/<int:id>/delete/')
+@login_required
 def delete(id):
     post = Postobject.query.get(id)
     db.session.delete(post)

@@ -3,6 +3,7 @@
 {% block navigation %}{% endblock %}
 
 {% block content %}
+<div class="flex-container-forms">
 <h1>{% block title %} Posts {% endblock %}</h1>
     {% for post in posts %}
         <div class='post'>
@@ -13,6 +14,7 @@
             <button type="button" class="center button-two" onclick="window.location.href='{{ url_for('module_blog_post.get_edit', id=post['id']) }}'" >Edit</button>
         </div>
     {% endfor %}
+</div>
 {% endblock %}
 
 {% block footer %}{% endblock %}

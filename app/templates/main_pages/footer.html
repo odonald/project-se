@@ -7,6 +7,15 @@
 </div>
     <div class="flex-item">
     <p><a href="/contact">Contact</a></p>
-    </div>
-<div class="footer-row"><p>© madeinbed 2022</p></div>
 </div>
+<div class="footer-row"><p>
+    {% if current_user.is_authenticated %}
+      <small>
+        Logged in as {{ current_user.email }}.
+        <a href="{{ url_for('users.logout') }}">Logout</a>
+      </small>
+    {% endif %}</p></div>
+<div class="footer-row"><p>© madeinbed 2022</p></div>
+
+</div>
+
