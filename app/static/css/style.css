@@ -8,7 +8,7 @@ html, body{
 }
 .section{
     padding-bottom: 75px;}
-  
+
 h1 {
     font-size: 48px;
     font-weight: 400;
@@ -26,6 +26,45 @@ h2 {
     text-align: center;
     margin-top: 60px;
   } 
+.h2post {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 59px;
+    letter-spacing: 0em;
+    margin-top: 60px;
+  } 
+.post{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+.flex-container-forms{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+input[type=email], input[type=password],input[type=text],textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
 .flex-container-home-top{
     padding-top: 75px;
     height: 100%;
@@ -42,7 +81,10 @@ h2 {
   height:50%;
   background-image: none;
 }
-.flex-item-top-artshow{
+.flex-simple-pages{
+  height:100%;
+  background-image: none;
+}
 
 }
 .flex-item-top{
@@ -52,6 +94,15 @@ h2 {
         align-items: center;
       }
 
+.submitform{
+  padding-left: 40px;
+}
+.flex-container-post{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  align-items: center;
+}
 .flex-container {
     flex: 1;
     display: flex;

@@ -1,40 +1,28 @@
-import sqlite3
+from app.extensions.database import db
 from flask import Blueprint, redirect, url_for,render_template, flash, redirect, request, abort
 from flask_login import login_required
+from app.module_blog_post.models import Postobject
 
 blueprint = Blueprint('module_blog_post', __name__)
 
 
-## Connecting to database ##
 
-def get_db_connection():
-    conn = sqlite3.connect('app/database.db')
-    conn.row_factory = sqlite3.Row
-    return conn
-
-def get_post(post_id):
-    conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?',
-                        (post_id,)).fetchone()
-    conn.close()
-    if post is None:
-        abort(404)
-    return post
-## Connecting to database ends here ##
-
-## Write a post app starts here ##
 @blueprint.route("/newpost")
 @login_required
 def newpost():
-    conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts').fetchall()
-    conn.close()
+    posts = Postobject.query.all()
     return render_template("/module_blog_post/index.html", posts=posts)
 
-@blueprint.route('/create', methods=('GET', 'POST'))
+@blueprint.get('/create')
 @login_required
-def create():
-    if request.method == 'POST':
+def get_create():
+    return render_template('module_blog_post/create.html')
+
+
+@blueprint.post('/create')
+@login_required
+def post_create():
+    try:
         title = request.form['title']
         content = request.form['content']
 
@@ -42,54 +30,50 @@ def create():
             flash('Please enter a title!')
         elif not content:
             flash('Please enter a message!')
-        else:
-            conn = get_db_connection()
-            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
-                         (title, content))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('module_blog_post.newpost'))
 
-    return render_template('module_blog_post/create.html')
+        postobject = Postobject(
+            title=request.form.get('title'),
+            content=request.form.get('content'),
+        )
+        postobject.save()
+        return redirect(url_for('module_blog_post.newpost'))
+
+    except Exception as error_message:
+        error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
+        return render_template('users/register.html', error=error)
 
 
 ## Write a post app ends here ##
 
 ##Edit a post app starts here ##
-@blueprint.route('/<int:id>/edit/', methods=('GET', 'POST'))
-def edit(id):
-    post = get_post(id)
+@blueprint.get('/<int:id>/edit/')
+@login_required
+def get_edit(id):
+    posts = Postobject.query.get(id)
+    return render_template('module_blog_post/edit.html', post=posts)
 
-    if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
+@blueprint.post('/<int:id>/edit/')
+@login_required
+def post_edit(id):
+    try:
+        posts = Postobject.query.get(id)
+        posts.title = request.form['title']
+        posts.content = request.form['content']
+        db.session.commit()
+        return redirect(url_for('module_blog_post.newpost'))
 
-        if not title:
-            flash('Title is required!')
+    except Exception as error_message:
+        error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
+        return render_template('module_blog_post/edit.html', error=error)    
 
-        elif not content:
-            flash('Content is required!')
-
-        else:
-            conn = get_db_connection()
-            conn.execute('UPDATE posts SET title = ?, content = ?'
-                         ' WHERE id = ?',
-                         (title, content, id))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('module_blog_post.newpost'))
-
-    return render_template('module_blog_post/edit.html', post=post)
 ## Edit a post app ends here ##
 
 ## Deleteing posts starts here ##
-@blueprint.route('/<int:id>/delete/', methods=('POST',))
+@blueprint.post('/<int:id>/delete/')
+@login_required
 def delete(id):
-    post = get_post(id)
-    conn = get_db_connection()
-    conn.execute('DELETE FROM posts WHERE id = ?', (id,))
-    conn.commit()
-    conn.close()
-    flash('"{}" was successfully deleted!'.format(post['title']))
+    post = Postobject.query.get(id)
+    db.session.delete(post)
+    db.session.commit()
     return redirect(url_for('module_blog_post.newpost'))
 ## Deleteing posts ends here ##
