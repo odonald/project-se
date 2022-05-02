@@ -9,6 +9,10 @@
 <h1>Login</h1>
 
   <form method="POST">
+    <p>For assesment purposes you can log in using: 
+    <li>Email: demo@demo.de</li>
+    <li>Password: demo</li>
+    <br>Or open a new account via the "sign up" button</p>
     <div>
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required>
@@ -18,14 +22,16 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required>
     </div>
-    
-    <input type="submit" value="Login">
+    <button type="submit" value="Login" class="center button-two">Login</button>
   </form>  
-
+  
+<div>
 <h1>New User?</h1>
 <p>Open a new account here:</p>
-<button type="button" class="button" onclick="window.location.href='/register'" >Sign Up</button>
+<button type="button" class="center button-two" onclick="window.location.href='/register'" >Sign Up</button>
 </div>
+</div>
+
 {% endblock %}
 
 {% block footer %}{% endblock %}

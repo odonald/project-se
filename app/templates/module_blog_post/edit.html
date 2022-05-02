@@ -14,14 +14,13 @@
         <label for="content">Post Content</label>
         <br>
         <textarea name="content"
-                  placeholder="Post content"
                   rows="15"
                   cols="60"
-                  >
+                  value="{{ request.form['content'] or post['content'] }}">
                   {{ request.form['content'] or post['content'] }}
                 </textarea>
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit" class="center button-two">Submit</button>
     </form>
     
     <hr>
