@@ -28,7 +28,7 @@ The aim of this project is to build a plattform for people to discuss their thou
 1. Clone repository to your local machine. 
 - git clone git@github.com:odonald/project-se.git
 
-2. Assuming you have Python3 installed alread, navigate to project root folder and create a virtual environment:
+2. Assuming you have Python3 installed already, navigate to project root folder and create a virtual environment:
 - python3 -m venv venv 
 
 3. From project root folder start your virtual environment:
