@@ -7,7 +7,7 @@ The best conversations are going down in the youtube comment section. Lets take 
 * [Technologies Used](#technologies-used)
 * [Setup](#setup)
 * [Features(MVP)](#features)
-* [Roadmap](## Roadmap)
+* [Roadmap](#Roadmap)
 * [Project Status](#project-status)
 * [Contact](#contact)
 
