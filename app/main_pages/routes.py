@@ -3,12 +3,8 @@ from flask import Blueprint, render_template, redirect, url_for, send_file
 blueprint = Blueprint('main_pages', __name__)
 
 
-@blueprint.get("/")
-def get_home():
-    return render_template("main_pages/index.html")
-
-@blueprint.post("/")
-def post_home():
+@blueprint.route("")
+def home():
     return render_template("main_pages/index.html")
 
 @blueprint.route("/comments")
